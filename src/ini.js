@@ -1,5 +1,19 @@
 'use strict';
 
+if (!String.prototype.trim) {
+    String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    };
+}
+if (!String.prototype.dequote) {
+    String.prototype.dequote = function (quote) {
+        if (this[0] === quote && this[(this.length-1)] === quote) {
+            // substring here
+        }
+
+    };
+}
+
 var ini = require('ini'),
     fs = require('fs'),
     _defaultEncoding = 'utf-8';
@@ -16,6 +30,11 @@ var ini = require('ini'),
  * - add trim
  * - must support recurence to cater for multi level
  */
+
+
+function _fixValue(input) {
+    return (new String(input)).trim().dequote('"').dequote('\'').valueOf();
+}
 
 /**
  * Reads file
