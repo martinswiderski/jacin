@@ -1,0 +1,8 @@
+mary: 'One lamb'
+john:
+    - goat
+    - dog
+    - duck
+all:
+    rubber:
+        duck: part-time

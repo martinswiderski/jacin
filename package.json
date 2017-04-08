@@ -1,0 +1,68 @@
+{
+  "name": "jacin",
+  "version": "0.0.2",
+  "description": "Jacin, a JSON manipulation toolkit",
+  "keywords": [
+    "JSON",
+    "data",
+    "jacin",
+    "manipulation",
+    "delta",
+    "merge",
+    "diff",
+    "JavaScript",
+    "Object",
+    "Notation"
+  ],
+  "main": "index.js",
+  "directories": {
+    "test": "tests/specs/"
+  },
+  "dependencies": {
+    "JSONPath": "^0.11.2",
+    "crc-32": "^1.0.1",
+    "md5": "^2.2.1",
+    "md5-file": "^3.1.1",
+    "nyc": "^10.2.0",
+    "sha1": "^1.1.1",
+    "yamljs": "^0.2.9"
+  },
+  "devDependencies": {
+    "bash-color": "0.0.4",
+    "eslint": "^3.19.0",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.14.5"
+  },
+  "scripts": {
+    "help": "echo \"Placeholder - needs implementing\"; exit 0",
+    "version": "npm install fs; echo \"Updating version\"; node ./src/tool/version.js --update",
+    "aliases": "alias jasmine-node=./node_modules/.bin/jasmine-node; alias eslint=./node_modules/.bin/eslint; alias istanbul=./node_modules/.bin/istanbul",
+    "tests-sign-md5": "clear; echo \"\"; echo \"Warning: Only to run manually...\"; echo \"\"; cd tests/specs/; ./sign-tests; cd ../../; echo \"\"",
+    "rebuild": "rm -fr node_modules; npm install; npm test",
+    "prep-tests": "rm -fr reports/; mkdir reports/; mkdir reports/eslint/; mkdir reports/junit/; echo \"Reports\n---\" > reports/README.md; echo \"Unit tests results\n---\" > reports/junit/README.md;  echo \"eslint results\n---\" > reports/eslint/README.md",
+    "_eslint": "npm run aliases; OUT='./reports/eslint/eslint.txt'; date > $OUT; eslint src/*.js >> $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
+    "_junit": "npm run prep-tests; npm run aliases; jasmine-node --junitreport --growl tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
+    "_coverage": "rm -fr reports/coverage/; npm run aliases; istanbul cover --include-all-sources -x \"**src/tool/**\" jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
+    "test": "npm run prep-tests; npm run aliases; echo\"\"; echo \"Running all tests...\"; echo \"\"; jasmine-node --growl tests/specs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinswiderski/jacin.git"
+  },
+  "author": "Martin Swiderski",
+  "maintainers": [
+    {
+      "name": "Martin Swiderski",
+      "email": "martin.swiderski@gmail.com"
+    },
+    {
+      "name": "Red Puppet (QA)",
+      "email": "red@8ig.uk"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinswiderski/jacin/issues"
+  },
+  "homepage": "https://github.com/martinswiderski/jacin#readme"
+}
