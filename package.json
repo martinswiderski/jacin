@@ -47,22 +47,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://martinswiderski@github.com/red-puppet/jacin.git"
+    "url": "git+https://github.com/martinswiderski/jacin.git"
   },
   "author": "Martin Swiderski",
   "maintainers": [
     {
-      "name": "red-puppet",
-      "email": "red@8ig.uk"
+      "name": "Martin Swiderski",
+      "email": "martin.swiderski@gmail.com"
     },
     {
-      "name": "codebloke",
-      "email": "codebloke@gmail.com"
+      "name": "Red Puppet (QA)",
+      "email": "red@8ig.uk"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/red-puppet/jacin/issues"
+    "url": "https://github.com/martinswiderski/jacin/issues"
   },
-  "homepage": "https://github.com/red-puppet/jacin#readme"
+  "homepage": "https://github.com/martinswiderski/jacin#readme"
 }
