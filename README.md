@@ -52,6 +52,6 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
   
 **Upcoming features:**
 
-  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts
-  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots.
+  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts [#7]
+  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots. [#6]
   
