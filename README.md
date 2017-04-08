@@ -29,7 +29,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[Feature [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
+    * `.ini` files (limited only to section + 1 level key => value or key => values array)
  * Runnign selection (queries) to the objects/documents ~~and setting new values~~ using
     * ~~notation of `XPath`.~~ <sub>[Feature [#3](https://github.com/martinswiderski/jacin/issues/3)]</sub>
     * `JSONPath`
@@ -37,7 +37,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[Feature [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
+    * `.ini` files (limited only to section + 1 level key => value or key => values array)
  * Encrypting/decrypting <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
     * ~~values~~
     * or ~~whole object branches~~
