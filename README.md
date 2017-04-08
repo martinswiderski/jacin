@@ -29,7 +29,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~
+    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ [TO-DO [#2](https://github.com/martinswiderski/jacin/issues/2)]
  * Runnign selection (queries) to the objects/documents ~~and setting new values~~ using
     * ~~notation of `xpath`.~~
     * `JSONPath`
@@ -37,8 +37,8 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~
- * Encrypting/decrypting
+    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ [TO-DO [#2](https://github.com/martinswiderski/jacin/issues/2)]
+ * Encrypting/decrypting [TO-DO [#4](https://github.com/martinswiderski/jacin/issues/4)]
     * ~~values~~
     * or ~~whole object branches~~
     * ~~preserving native `Javascript` data type~~
@@ -52,6 +52,6 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
   
 **Upcoming features:**
 
-  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts [item [#7](https://github.com/martinswiderski/jacin/issues/7)]
-  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots [item [#6](https://github.com/martinswiderski/jacin/issues/6)].
+  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts [TO-DO [#7](https://github.com/martinswiderski/jacin/issues/7)]
+  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots [TO-DO [#6](https://github.com/martinswiderski/jacin/issues/6)].
   
