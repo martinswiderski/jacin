@@ -48,7 +48,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * `SHA1`
     * your `custom` functions
   * Cloning native `Javascript` objects
-  * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~
+  * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ [TO-DO [#5](https://github.com/martinswiderski/jacin/issues/5)]
   
 **Upcoming features:**
 
