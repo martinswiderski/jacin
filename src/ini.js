@@ -5,6 +5,19 @@ var ini = require('ini'),
     _defaultEncoding = 'utf-8';
 
 /**
+ * Problem:
+ * v. 1.3.4 of [ini] does not understand quotes
+ * and # all after first = is returned with no trim,
+ * no unquote resulting in passing spaces wrapping values
+ *
+ * Solution:
+ * - shrinkwrap ini version
+ * - add quote "bleach"
+ * - add trim
+ * - must support recurence to cater for multi level
+ */
+
+/**
  * Reads file
  * @param string filename Exisiting .ini file
  * @returns object|boolean
@@ -28,7 +41,7 @@ function parseIniString(string) {
         var ob = ini.parse(string);
         console.log('Parsed string');
         console.log(ob);
-        return (typeof ob !== 'object') ? false : ob;
+        return (typeof ob !== 'object') ? false : ob; // @todo: inject fix
     } catch (err) {
         console.log(err);
         return false;
