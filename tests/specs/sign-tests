@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
+
+cd $SCRIPTPATH
+echo ""
+for i in *spec.js
+do
+    FILE=$i
+    MD5SUM=`md5sum $FILE`
+    BASENAME=`echo $MD5SUM | cut -d ' ' -f 2`
+    JSON="${BASENAME/spec.js/details.json}"
+    MD5=`echo $MD5SUM | cut -d ' ' -f 1`
+    GIT=`git log --follow $BASENAME | grep "Date:" | sed -n '1p'`
+    DATE=${GIT/Date:   /}
+    COMMIT=`git log --follow $BASENAME | grep "Sat Apr 1 20:08:46 2017 +0100" -B 3 | grep "commit" | tail -c 9`
+    echo "MD5: $MD5  File: $BASENAME "
+done
+echo ""
+exit 0
