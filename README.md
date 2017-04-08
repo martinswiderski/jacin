@@ -46,7 +46,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * `CRC32` for `UTF-8` strings
     * `MD5`
     * `SHA1`
-    * your `custom` functions
+    * user-defined `custom` functions
   * Cloning native `Javascript` objects
   * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ <sub>[Feature [#5](https://github.com/martinswiderski/jacin/issues/5)]</sub>
   
