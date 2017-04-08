@@ -29,16 +29,16 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[TO-DO [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
+    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[Feature [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
  * Runnign selection (queries) to the objects/documents ~~and setting new values~~ using
-    * ~~notation of `XPath`.~~ <sub>[TO-DO [#3](https://github.com/martinswiderski/jacin/issues/3)]</sub>
+    * ~~notation of `XPath`.~~ <sub>[Feature [#3](https://github.com/martinswiderski/jacin/issues/3)]</sub>
     * `JSONPath`
  * Exporting data to:
     * a native `Javascript` object
     * `JSON` format string
     * `YAML` string
-    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[TO-DO [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
- * Encrypting/decrypting <sub>[TO-DO [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
+    * `.ini` ~~files (limited only to section + 1 level key => value or key => values array)~~ <sub>[Feature [#2](https://github.com/martinswiderski/jacin/issues/2)]</sub>
+ * Encrypting/decrypting <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
     * ~~values~~
     * or ~~whole object branches~~
     * ~~preserving native `Javascript` data type~~
@@ -48,10 +48,10 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * `SHA1`
     * your `custom` functions
   * Cloning native `Javascript` objects
-  * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ <sub>[TO-DO [#5](https://github.com/martinswiderski/jacin/issues/5)]</sub>
+  * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ <sub>[Feature [#5](https://github.com/martinswiderski/jacin/issues/5)]</sub>
   
 **Upcoming features:**
 
-  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts <sub>[TO-DO [#7](https://github.com/martinswiderski/jacin/issues/7)]</sub>
-  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[TO-DO [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
+  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts <sub>[Feature [#7](https://github.com/martinswiderski/jacin/issues/7)]</sub>
+  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
   
