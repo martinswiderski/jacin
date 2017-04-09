@@ -8,6 +8,7 @@ var _c = 0,
     _yaml = require('yamljs'),
     _export = {},
     _error = require('./jacin-error'),
+    _configIni = require('config.ini'),
     _ext = '',
     _excl = {
         key: {
@@ -58,7 +59,8 @@ function readFile(file) {
             ob = require(file);
         } else if (_ext === 'yaml' || _ext === 'yml') {
             ob = _yaml.load(file);
-
+        } else if (_ext === 'ini') {
+            ob = _configIni.load(file);
         } else {
             throw new _error('Unknown extension ' + _ext);
         }
