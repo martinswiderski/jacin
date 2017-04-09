@@ -88,6 +88,7 @@ describe('Generates output', function () {
         output = {
             object: read.toObject(),
             json: read.toJSON(),
+            ini: read.toIni(),
             yaml: read.toYaml()
         },
         expectedYaml = [
@@ -106,6 +107,20 @@ describe('Generates output', function () {
     it('as JSON', function () {
         expect(typeof output.json).toBe('string');
         expect(output.json).toBe('{"sectionA":{"mary":"One lamb","john":["goat","dog","duck"]}}');
+    });
+    it('as INI', function () {
+        expect(typeof output.ini).toBe('string');
+        expect(output.ini).toBe([
+            '',
+            '; Section: sectionA',
+            '[sectionA]',
+            '',
+            'mary = One lamb',
+            'john[] = goat',
+            'john[] = dog',
+            'john[] = duck',
+            ''
+        ].join('\n'));
     });
     it('as YAML', function () {
         expect(typeof output.yaml).toBe('string');

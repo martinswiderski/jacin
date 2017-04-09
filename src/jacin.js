@@ -170,6 +170,10 @@ function _jacin() {
         return _yaml.stringify(this._object(), 4);
     };
 
+    this.toIni = function() {
+        return _configIni.stringify(this._object());
+    };
+
 
     this.getJsonpath = function(input, jacin) {
         return (jacin === true)
