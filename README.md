@@ -15,7 +15,7 @@ of **Jacinta** or a variation on the spelling of **Jason**
 
 Version|Published|By|URL
 --- | --- | --- | ---
-**0.0.2** | **2017-04-08** | `codebloke` | [npm](https://www.npmjs.com/package/jacin)
+**0.0.21** | **2017-04-08** | `codebloke` | [npm](https://www.npmjs.com/package/jacin)
 
 ***
 
