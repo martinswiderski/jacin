@@ -31,6 +31,12 @@ describe('Takes STRING input', function () {
         expect(jacin(__dirname + '/../props/animals.yml').all.rubber.duck).toBe('part-time');
     });
 
+    it('as INI file', function () {
+        expect(jacin(__dirname + '/../props/config.ini').isValid()).toBe(true);
+        expect(jacin(__dirname + '/../props/config.ini').SectionOne.real).toBe(3.14);
+        expect(jacin(__dirname + '/../props/config.ini').getJsonpath('$..SectionOne.real')).toBe(3.14);
+    });
+
     var jsonString = '{"name":"jacin","version":"0.0.2","description":"Jacin, a JSON manipulation toolkit","keywords":["JSON","data","jacin","manipulation","delta","merge","diff","JavaScript","Object","Notation"],"main":"index.js","directories":{"test":"tests/specs/"},"dependencies":{"md5":"^2.2.1","nyc":"^10.2.0","yamljs":"^0.2.9"},"devDependencies":{"bash-color":"0.0.4","eslint":"^3.19.0","istanbul":"^0.4.5","jasmine-node":"^1.14.5"},"scripts":{"tests-sign-md5":"cd tests/specs/; ./sign-tests; cd ../../","rebuild":"rm -fr node_modules; npm install; npm test","test":"alias jasmine-node=./node_modules/.bin/jasmine-node; jasmine-node --growl tests/specs/"},"repository":{"type":"git","url":"git+https://martinswiderski@github.com/red-puppet/jacin.git"},"author":"Martin Swiderski","maintainers":[{"name":"red-puppet","email":"red@8ig.uk"},{"name":"codebloke","email":"codebloke@gmail.com"}],"license":"MIT","bugs":{"url":"https://github.com/red-puppet/jacin/issues"},"homepage":"https://github.com/red-puppet/jacin#readme"}',
         yamlAnimals = [
             'mary: \'One lamb\'',
@@ -69,55 +75,60 @@ describe('Takes STRING input', function () {
 
 describe('Generates output', function () {
     var original = {
-            mary: 'One lamb',
-            john: [
-                'goat',
-                'dog',
-                'duck'
-            ],
-            all: {
-                rubber: {
-                    duck: 'part-time'
-                }
+            sectionA: {
+                mary: 'One lamb',
+                john: [
+                    'goat',
+                    'dog',
+                    'duck'
+                ]
             }
         },
         read = jacin(original),
         output = {
             object: read.toObject(),
             json: read.toJSON(),
+            ini: read.toIni(),
             yaml: read.toYaml()
         },
         expectedYaml = [
-            'mary: \'One lamb\'',
-            'john:',
-            '    - goat',
-            '    - dog',
-            '    - duck',
-            'all:',
-            '    rubber:',
-            '        duck: part-time',
+            'sectionA:',
+            '    mary: \'One lamb\'',
+            '    john:',
+            '        - goat',
+            '        - dog',
+            '        - duck',
             ''
         ];
 
     // manipulations to the exported one
-    output.object.mary = 'Only changed in object clone';
-    output.object.all.rubber = {duck: 'none', kittens: 'part-time'};
+    output.object.sectionA.mary = 'Only changed in object clone';
 
     it('as JSON', function () {
         expect(typeof output.json).toBe('string');
-        expect(output.json).toBe('{"mary":"One lamb","john":["goat","dog","duck"],"all":{"rubber":{"duck":"part-time"}}}');
+        expect(output.json).toBe('{"sectionA":{"mary":"One lamb","john":["goat","dog","duck"]}}');
+    });
+    it('as INI', function () {
+        expect(typeof output.ini).toBe('string');
+        expect(output.ini).toBe([
+            '',
+            '; Section: sectionA',
+            '[sectionA]',
+            '',
+            'mary = One lamb',
+            'john[] = goat',
+            'john[] = dog',
+            'john[] = duck',
+            ''
+        ].join('\n'));
     });
     it('as YAML', function () {
         expect(typeof output.yaml).toBe('string');
         expect(output.yaml).toBe(expectedYaml.join('\n'));
     });
     it('as a Native (and separate) Javascript object', function () {
-        expect(original.mary).toBe('One lamb');
-        expect(original.all.rubber.duck).toBe('part-time');
-        expect(typeof original.all.rubber.kittens).toBe('undefined'); // does not exist yet
-        expect(output.object.all.rubber.duck).toBe('none');           // changed
-        expect(output.object.all.rubber.kittens).toBe('part-time');   // changed
-        expect(output.object.mary).toBe('Only changed in object clone');
+        expect(original.sectionA.mary).toBe('One lamb');
+        expect(output.object.sectionA.mary).toBe('Only changed in object clone');
     });
 
 });
