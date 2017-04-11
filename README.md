@@ -56,3 +56,4 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
   * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
   
 
+
