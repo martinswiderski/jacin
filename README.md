@@ -27,17 +27,23 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
 
  * Ingesting multiple data object formats, such as:
     * a native `Javascript` object
-    * `JSON` format string
-    * `YAML` string
-    * `.ini` files (limited only to section + 1 level key => value or key => values array)
+    * `JSON` string / file
+    * `YAML` string / file
+    * `.ini` string / file 
+      * limited only to section + 1 level key => value or key => values array)
+      * with values wrapped in single or double quotes
+    * `CSV` string / file
  * Runnign selection (queries) to the objects/documents ~~and setting new values~~ using
     * ~~notation of `XPath`.~~ <sub>[Feature [#3](https://github.com/martinswiderski/jacin/issues/3)]</sub>
     * `JSONPath`
  * Exporting data to:
     * a native `Javascript` object
-    * `JSON` format string
+    * `JSON` string
     * `YAML` string
-    * `.ini` files (limited only to section + 1 level key => value or key => values array)
+    * `.ini` string 
+      * limited only to section + 1 level key => value or key => values array)
+      * all values optionally escaped and wrapped with double quotes
+    * `CSV` formatted string
  * Encrypting/decrypting <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
     * ~~values~~
     * or ~~whole object branches~~
