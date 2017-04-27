@@ -37,7 +37,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
     * `JSONPath`
  * Setting values 
     * Done using `stringified` native `Javascript` notation
- * Exporting data to:
+ * Output (exporting data) to:
     * a native `Javascript` object
     * `JSON` string
     * `YAML` string
