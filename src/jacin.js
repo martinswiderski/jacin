@@ -1,6 +1,7 @@
 'use strict';
 
 var _c = 0,
+    _type = require('./type'),
     _md5 = require('md5'),
     _sha1 = require('sha1'),
     _crc32 = require('crc-32'),
@@ -115,6 +116,10 @@ function _jacin() {
         _id = ++_c,
         _custom = false,
         _changeReg = {}; // placeholder
+
+    this.type = function() {
+        return _type;
+    };
 
     this.isValid = function() {
         return (_valid === true);
