@@ -2,9 +2,8 @@ require('./../../src/tool/test-signature')(__filename);
 
 var varType = require('./../../index')({}).type();
 
-function CustomObject() {
-
-}
+function CustomObject() { }
+var und = {};
 
 describe('reads types', function () {
     it('basic ctypes', function () {
@@ -15,5 +14,6 @@ describe('reads types', function () {
         expect(varType.is(new CustomObject())).toBe('object.CustomObject');
         expect(varType.is([])).toBe('array');
         expect(varType.is(new Array())).toBe('array');
+        expect(varType.is(und.notSet)).toBe('undefined');
     });
 });
