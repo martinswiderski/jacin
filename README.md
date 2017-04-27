@@ -56,10 +56,10 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
   * Cloning native `Javascript` objects
   * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ <sub>[Feature [#5](https://github.com/martinswiderski/jacin/issues/5)]</sub>
   
-**Upcoming features:**
+**Upcoming features (TODO):**
 
-  * Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts <sub>[Feature [#7](https://github.com/martinswiderski/jacin/issues/7)]</sub>
-  * Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
+  * [ ] Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts <sub>[Feature [#7](https://github.com/martinswiderski/jacin/issues/7)]</sub>
+  * [ ] Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
   
 
 
