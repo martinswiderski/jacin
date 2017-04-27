@@ -33,9 +33,10 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
       * limited only to section + 1 level key => value or key => values array)
       * with values wrapped in single or double quotes
     * `CSV` string / file
- * Runnign selection (queries) to the objects/documents ~~and setting new values~~ using
-    * ~~notation of `XPath`.~~ <sub>[Feature [#3](https://github.com/martinswiderski/jacin/issues/3)]</sub>
+ * Selections (queries) to the objects/documents using
     * `JSONPath`
+ * Setting values 
+    * Done using native `Javascript` notation
  * Exporting data to:
     * a native `Javascript` object
     * `JSON` string

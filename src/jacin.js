@@ -71,6 +71,26 @@ function readFile(file) {
     return ob;
 }
 
+/**
+ * Sets value to Javascript object
+ *
+ * @param object obj  Values are set within this one
+ * @param string path Path is parsed and used iv valid
+ * @param mixed value
+ *
+ * @return boolean
+ */
+function setNestedValue(obj, path, value) {
+    try {
+
+        // placeholder
+        
+    } catch (err) {
+        console.log(err.message);
+        return false;
+    }
+}
+
 function readString(input) {
     var ob;
     try {
@@ -93,7 +113,8 @@ function _jacin() {
     var ob,
         _valid = false,
         _id = ++_c,
-        _custom = false;
+        _custom = false,
+        _changeReg = {}; // placeholder
 
     this.isValid = function() {
         return (_valid === true);
