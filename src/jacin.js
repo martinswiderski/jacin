@@ -1,5 +1,11 @@
 'use strict';
 
+if (!String.prototype.trim || typeof String.prototype.trim !== 'function') {
+    String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    };
+}
+
 var _c = 0,
     _type = require('./type'),
     _md5 = require('md5'),
@@ -77,12 +83,26 @@ function readFile(file) {
  *
  * @param object obj  Values are set within this one
  * @param string path Path is parsed and used iv valid
- * @param mixed value
+ * @param mixed  value
+ * @param object registry Change registry
  *
  * @return boolean
  */
-function setNestedValue(obj, path, value) {
+function setNestedValue(obj, path, value, registry) {
     try {
+        // log in registry
+        if (typeof registry === 'object') registry[path] = value;
+        var details = path.split('.');
+
+        for (var i in details) {
+            details[i] = details[i].trim();
+            if (details[i] === '') {
+                throw new Error('Empty keys not allowed');
+            }
+            if (details[i].regex(/^[a-z\d\-_\s]+$/i) !== true) {
+                throw new Error('Non aphanumeric');
+            }
+        }
 
         // placeholder
 
@@ -119,6 +139,11 @@ function _jacin() {
 
     this.type = function() {
         return _type;
+    };
+
+    this.set = function(path, value) {
+        return setNestedValue(this, path, value, _changeReg);
+
     };
 
     this.isValid = function() {
@@ -199,7 +224,6 @@ function _jacin() {
     this.toIni = function() {
         return _configIni.stringify(this._object());
     };
-
 
     this.getJsonpath = function(input, jacin) {
         return (jacin === true)
