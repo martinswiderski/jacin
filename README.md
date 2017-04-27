@@ -25,7 +25,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
 
 ### Features
 
- * Reading input (ingesting) from multiple data object formats, such as:
+ * Read input (ingest) in multiple data object formats, such as:
     * a native `Javascript` object
     * `JSON` string / file
     * `YAML` string / file
@@ -33,9 +33,10 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
       * limited only to section + 1 level key => value or key => values array)
       * with values wrapped in single or double quotes
     * `CSV` string / file
- * Fetching values (sSelections, queries) of the objects/documents using
+ * Fetch values (sSelections, queries) of the objects/documents using
     * `JSONPath`
- * Setting values 
+ * Clone native `Javascript` objects
+ * Set values 
     * Done using `stringified` native `Javascript` notation
  * Output (exporting data) to:
     * a native `Javascript` object
@@ -45,22 +46,21 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
       * limited only to section + 1 level key => value or key => values array)
       * all values optionally escaped and wrapped with double quotes
     * `CSV` formatted string
- * Encrypting/decrypting <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
+ * Encrypt/decrypt <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
     * ~~specific values~~
     * or ~~whole object branches~~
     * preserving the ~~native `Javascript` data type~~
- * Signing and generating check-sums for both *whole objects* and *values* (eg. for the purpose of sanity checks of encryption/dectryption chain) using
+ * Sign/generate check-sums for both *whole objects* and *values* (eg. for the purpose of sanity checks of encryption/decryption chain) using
     * `CRC32` for `UTF-8` strings
     * `MD5`
     * `SHA1`
     * user-defined `custom` functions
-  * Cloning native `Javascript` objects
   * ~~Comparing values and calculation of `diff` for native `Javascript` objects~~ <sub>[Feature [#5](https://github.com/martinswiderski/jacin/issues/5)]</sub>
   
 **Upcoming features (TODO):**
 
   * [ ] Basic `NoSQL` to `SQL` *ETL-helper* features, eg. for automating extracts from document databases like eg. `MongoDB` to `CSV` or `SQL` scripts <sub>[Feature [#7](https://github.com/martinswiderski/jacin/issues/7)]</sub>
-  * [ ] Setting objects `immutable` with incremental, signed, timestamped change sets - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
+  * [ ] Setting objects `immutable` with incremental, signed, timestamped change sets (audit) - incl. representation thereof in multiple `JSON` snapshots <sub>[Feature [#6](https://github.com/martinswiderski/jacin/issues/6)]</sub>.
   
 
 
