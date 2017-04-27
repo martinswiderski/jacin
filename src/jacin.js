@@ -84,7 +84,7 @@ function setNestedValue(obj, path, value) {
     try {
 
         // placeholder
-        
+
     } catch (err) {
         console.log(err.message);
         return false;

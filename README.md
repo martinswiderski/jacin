@@ -25,7 +25,7 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
 
 ### Features
 
- * Ingesting multiple data object formats, such as:
+ * Reading input (ingesting) from multiple data object formats, such as:
     * a native `Javascript` object
     * `JSON` string / file
     * `YAML` string / file
@@ -33,10 +33,10 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
       * limited only to section + 1 level key => value or key => values array)
       * with values wrapped in single or double quotes
     * `CSV` string / file
- * Selections (queries) to the objects/documents using
+ * Fetching values (sSelections, queries) of the objects/documents using
     * `JSONPath`
  * Setting values 
-    * Done using native `Javascript` notation
+    * Done using `stringified` native `Javascript` notation
  * Exporting data to:
     * a native `Javascript` object
     * `JSON` string
@@ -46,9 +46,9 @@ Meet `jacin`, a `JSON`/`Javascript` objects manipulation toolkit, (among other) 
       * all values optionally escaped and wrapped with double quotes
     * `CSV` formatted string
  * Encrypting/decrypting <sub>[Feature [#4](https://github.com/martinswiderski/jacin/issues/4)]</sub>
-    * ~~values~~
+    * ~~specific values~~
     * or ~~whole object branches~~
-    * ~~preserving native `Javascript` data type~~
+    * preserving the ~~native `Javascript` data type~~
  * Signing and generating check-sums for both *whole objects* and *values* (eg. for the purpose of sanity checks of encryption/dectryption chain) using
     * `CRC32` for `UTF-8` strings
     * `MD5`
