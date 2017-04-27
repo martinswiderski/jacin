@@ -1,7 +1,6 @@
 require('./../../src/tool/test-signature')(__filename);
 
-var jacin = require('./../../index'),
-    varType = jacin({}).type();
+var varType = require('./../../index')({}).type();
 
 function CustomObject() {
 
