@@ -1,27 +1,6 @@
 'use strict';
 
-/***
- * Boolean.
- * Null.
- * Undefined.
- * Number. int, real
- * String.
- * Object, native, array, etc.
- */
-
-
-var _t = null,
-    _validTypes = {
-        'null': true,
-        boolean: true,
-        'undefined': true,
-        string: true,
-        int: true,
-        float: true,
-        number: true,
-        object: true,
-        array: true
-    };
+var _t;
 
 function _objName(obj) {
     if (typeof obj === 'object') {
@@ -50,13 +29,14 @@ function _isFloat(num) {
 }
 
 var _type = {
-    'array': function (ob) { return (typeof ob.length === 'number' && typeof ob.push === 'function' ) ? 'array' : false },
-    object: function (ob) { return typeof ob === 'object' ? 'object'+_objName(ob) : false; },
-    int: _isInt,
-    float: _isFloat,
-    boolean: function (b) { return b === true || b === false ? 'boolean' : false; },
+    'undefined': function (u) { return typeof u === 'undefined' ? 'undefined' : false; },
+    'array': function (ob) { return (typeof ob.length === 'number' && typeof ob.push === 'function' ) ? 'array' : false; },
+    'object': function (ob) { return typeof ob === 'object' ? 'object'+_objName(ob) : false; },
+    'int': _isInt,
+    'float': _isFloat,
+    'boolean': function (b) { return b === true || b === false ? 'boolean' : false; },
     'null': function (n) { return n === null ? 'null' : false; },
-    string: function (s) { return typeof s === 'string' ? 'string' : false; }
+    'string': function (s) { return typeof s === 'string' ? 'string' : false; }
 };
 
 function getTypeDetails(inspect) {
